@@ -1,0 +1,93 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "parentId": null,
+      "parentName": "",
+      "name": "ROOT",
+      "displayName": "ROOT"
+    },
+    {
+      "id": 2,
+      "parentId": 1,
+      "parentName": "ROOT",
+      "name": "Toys",
+      "displayName": "Toys"
+    },
+    {
+      "id": 3,
+      "parentId": 2,
+      "parentName": "Toys",
+      "name": "Wodden Toys",
+      "displayName": "Wodden Toys"
+    },
+    {
+      "id": 4,
+      "parentId": 2,
+      "parentName": "Toys",
+      "name": "Lego",
+      "displayName": "Lego"
+    },
+    {
+      "id": 5,
+      "parentId": 2,
+      "parentName": "Toys",
+      "name": "Playmobil",
+      "displayName": "Playmobil"
+    }
+  ],
+  "categories_options": [
+    {
+      "value": 1,
+      "text": "ROOT"
+    },
+    {
+      "value": 2,
+      "text": "Toys"
+    },
+    {
+      "value": 3,
+      "text": "Wodden Toys"
+    },
+    {
+      "value": 4,
+      "text": "Lego"
+    },
+    {
+      "value": 5,
+      "text": "Playmobil"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 3,
+      "categoryName": "Wodden Toys",
+      "name": "Toy Blocks",
+      "price": 10,
+      "currency": "EUR",
+      "displayCurrency": "EUR",
+      "displayName": "Toys > Wodden Toys > Toy Blocks"
+    },
+    {
+      "id": 2,
+      "categoryId": 4,
+      "categoryName": "Lego",
+      "name": "Lego Friends Beach Club",
+      "price": 19.99,
+      "currency": "EUR",
+      "displayCurrency": "EUR",
+      "displayName": "Toys > Lego > Lego Friends Beach Club"
+    },
+    {
+      "id": 3,
+      "categoryId": 4,
+      "categoryName": "Lego",
+      "name": "Lego Friends Andrea's Room",
+      "price": 14.99,
+      "currency": "EUR",
+      "displayCurrency": "EUR",
+      "displayName": "Toys > Lego > Lego Friends Andrea's Room"
+    }
+  ]
+}

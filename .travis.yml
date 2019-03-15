@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+- 2.4.4
+before_script:
+  - psql -c 'create database shoppu_test_travis_ci;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:create RAILS_ENV=test
+  - bundle exec rake db:migrate RAILS_ENV=test
+  - bundle exec rake db:seed RAILS_ENV=test
+script:
+services:
+  - postgresql
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: JUmhlWyG1cZNyo3LcpR+xT1DvlBSzqAyspcpoQkMR+M6nTVJ4gxNhHOXiwfZEJOxqKUbQvNc5fSojyAiUGz2TCfvIk/4l/uJzNyupWt6SzGDNCjlo7jcj47ukBI+W6QxSOLFEbimHktek5wzGBtrQntaK+kbDKLGH31lUm602nIqiRQUBQX8mUDWX8azTykjiLuunfCE/gsxkqSkDNH1k4m0vO0xsoGGfBdVlFoUDrW+UZJdqcuNYFsNrbbVFeTQKY6Li9TgfpG8B+iGQWhYYIlyrDvI1OAFIvs4D6bvLhbz49GFMh8kwrRguCUu7BWk9bhBle+GGsnPRHF1fEIhGPICNIa3D97wPcP2xcGL2ljJTjuYk20r7BJHtS1beHDvxvF6vWBhHYftNADeCQ28WNzdHQZs/SlbKAtY2MR3q8+Zl1keiL4EM0zjg/iNhs2SjJ/+uV5SeIUzW5dYnsYtvyeYFlazWo11zUP/hP+ChmMq3ZgQ6l/z+digyOVAyv+0ZOBzgs7kak06PUdtUIIlKauVs2cqWe4aKuDuSZpmx9/t/kZ6OIV1iCrSez9zeO/ERapPyb5QaiRtCv5Jo6liOLdIFBeIhgryWmaPTms1FYzFAHAofM+ajXXjVZo1Du3qDzae1EH2UHq1fdkHS6xnu/QRU3ISVVW9mnv8suhXQs8=
+  app: shoppu
+  run:
+  - restart

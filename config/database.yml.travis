@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: shoppu_test_travis_ci
+  username: postgres
