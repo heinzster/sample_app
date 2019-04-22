@@ -10,29 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018112102) do
+ActiveRecord::Schema.define(version: 2019_04_22_130400) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "categories", force: :cascade do |t|
-    t.bigint "parent_id"
+  create_table "categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "parent_id"
     t.string "name"
     t.integer "products_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "g_identifier"
     t.index ["name"], name: "index_categories_on_name", unique: true
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.bigint "category_id"
+  create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "category_id"
     t.string "name"
     t.decimal "price"
     t.string "currency", default: "EUR"
     t.string "display_currency", default: "EUR"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "p_identifier"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
