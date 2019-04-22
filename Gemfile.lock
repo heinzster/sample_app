@@ -1,5 +1,5 @@
 PATH
-  remote: /Users/heinzster/Downloads/token-master5/lib/has_unique_identifier
+  remote: vendor
   specs:
     has_unique_identifier (0.1.0)
       activerecord (~> 5.0)
