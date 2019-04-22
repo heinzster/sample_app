@@ -29,11 +29,11 @@ The frontend is built on React JS and Semantic UI.
 
 # LIVE DEMO
 
-Visit https://shoppu-frontend.herokuapp.com/ to see live demo. As this is a free Heroku account please be patient during spin-up of the virtual server.
+Visit https://heinz-uuid.herokuapp.com/ to see live demo. As this is a free Heroku account please be patient during spin-up of the virtual server.
 
 # API DOCS
 
-Visit https://shoppu-frontend.herokuapp.com/swagger.html to see REST API documentation build with Swagger.
+Visit https://heinz-uuid.herokuapp.com/swagger.html to see REST API documentation build with Swagger.
 
 # BUILD PROCESS
 
@@ -57,7 +57,7 @@ To build a production database you can use:
 
 ```
 export RAILS_ENV=production
-rake db:setup 
+rake db:setup
 ```
 
 
@@ -78,6 +78,7 @@ For production mode use:
 
 ```
 RAILS_ENV=production
+NODE_ENV=production
 bundle exec rails assets:precompile
 rails s
 ```
