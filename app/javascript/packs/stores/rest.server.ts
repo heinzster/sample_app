@@ -56,7 +56,7 @@ class RestServer {
   }
 
   public async get(path: string): Promise<any> {
-    const url = `${this.restApiBaseUrl}${path}`;
+    const url = `${path}`;
     logger.of('RestServer.get').data('url', url);
 
     return axios.get(url)
@@ -71,7 +71,7 @@ class RestServer {
   }
 
   public async delete(path: string, id: number): Promise<any> {
-    const url = `${this.restApiBaseUrl}${path}/${id}`;
+    const url = `${path}/${id}`;
     logger.of('RestServer.delete').data('url', url);
 
     if (this.MOCKED) {
@@ -91,7 +91,7 @@ class RestServer {
   }
 
   public async put(path: string, id: number, json: {}): Promise<any> {
-    const url = `${this.restApiBaseUrl}${path}/${id}`;
+    const url = `${path}/${id}`;
     logger.of('RestServer.put').data('url', url);
     logger.of('RestServer.put').data('json', json);
 
@@ -112,7 +112,7 @@ class RestServer {
   }
 
   public async post(path: string, json: {}): Promise<any> {
-    const url = `${this.restApiBaseUrl}${path}`;
+    const url = `${path}`;
     logger.of('RestServer.post').data('url', url);
 
     if (this.MOCKED) {
