@@ -1,6 +1,8 @@
 class Category < ApplicationRecord
   include Swagger::Blocks
 
+  has_unique_identifier :g_identifier, segment_count: 3, segment_size: 2, delimiter: '-'
+
   swagger_schema :CategoryJSON do
     key :required, [:id]
 
@@ -89,7 +91,8 @@ class Category < ApplicationRecord
   alias_attribute :productsCount, :products_count
 
   def displayName
-    parent.present? ? "#{parent.displayName} > #{name}" : name
+    display_name = g_identifier ? "[#{g_identifier}] #{name}" : name
+    parent.present? ? "#{parent.displayName} > #{display_name}" : display_name
   end
 
   def as_json(options = {})
