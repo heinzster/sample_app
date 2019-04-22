@@ -42,7 +42,7 @@ gem 'loofah', '>= 2.2.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # local gem for additional category and product identifiers
-gem "has_unique_identifier", path: "vendor/"
+gem "has_unique_identifier", path: "lib/has_unique_identifier"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
